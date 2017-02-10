@@ -1,2 +1,2 @@
 # Traffic-Lights
-Traffic Lights
+Electrical Engineering Design Project
