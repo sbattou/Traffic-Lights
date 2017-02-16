@@ -1,5 +1,6 @@
 package com.trafficlights.capstone.trafficlights;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -9,6 +10,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -30,5 +34,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng marker = new LatLng(45.4215, -75.6972);
         mMap.addMarker(new MarkerOptions().position(marker).title("You're here!"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(marker));
+        Polyline line = mMap.addPolyline(new PolylineOptions()
+                .add(new LatLng(51.5, -0.1), new LatLng(40.7, -74.0))
+                .width(5)
+                .color(Color.RED));
     }
 }
